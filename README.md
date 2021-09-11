@@ -1,6 +1,11 @@
 # bmi_calculator
 
 A new Flutter project.
+Course Link https://www.linkedin.com/learning/flutter-part-07-building-the-ui-or-flutter-part-07-building-uis/how-to-use-flutter-themes
+
+log Update
+--------------------------
+Start at 2:30PM 11/09/2021
 
 ## Getting Started
 
