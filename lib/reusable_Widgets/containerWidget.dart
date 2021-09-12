@@ -11,13 +11,11 @@ class ReusableContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        margin: EdgeInsets.all(15.0),
-        decoration: BoxDecoration(
-            color: backgroundColor, borderRadius: BorderRadius.circular(15.0)),
-        child: cardChild,
-      ),
+    return Container(
+      margin: EdgeInsets.all(15.0),
+      decoration: BoxDecoration(
+          color: backgroundColor, borderRadius: BorderRadius.circular(15.0)),
+      child: cardChild,
     );
   }
 }
