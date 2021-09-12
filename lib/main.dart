@@ -54,7 +54,7 @@ class _InputPageState extends State<InputPage> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   ReusableContainer(
-                      backgroundColor: backgroundColorReusableConainter),
+                      backgroundColor: backgroundColorReusableConainter,cardChild: null,),
                   ReusableContainer(
                       backgroundColor: backgroundColorReusableConainter),
                 ],
