@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/reusable_Widgets/cardWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_Widgets/containerWidget.dart';
@@ -5,7 +6,8 @@ import 'reusable_Widgets/containerWidget.dart';
 ///START CONST PROPETIES.
 const heightBottomConainer = 80.0;
 const colorBottomConainer = Color(0xFFEB1555);
-const backgroundColorReusableConainter = Color(0XFF1D1E33);
+const cardBackgroundColor = Color(0XFF1D1E33);
+const cardFontColor = Color(0xFF8D8E98);
 
 ///CONST PROPERTIES ENDS.
 
@@ -52,56 +54,56 @@ class _InputPageState extends State<InputPage> {
       ),
       body: Container(
         child: Column(
-          // mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   ReusableContainer(
-                    backgroundColor: backgroundColorReusableConainter,
+                    backgroundColor: cardBackgroundColor,
                     cardChild: CardWidget(
                       icon: FontAwesomeIcons.mars,
-                      iconColor: Colors.white,
                       title: "MALE",
+                      titleColor: cardFontColor,
                     ),
                   ),
                   ReusableContainer(
-                    backgroundColor: backgroundColorReusableConainter,
+                    backgroundColor: cardBackgroundColor,
                     cardChild: CardWidget(
-                      icon: FontAwesomeIcons.mars,
-                      iconColor: Colors.white,
+                      icon: FontAwesomeIcons.venus,
                       title: "FEMALE",
+                      titleColor: cardFontColor,
                     ),
                   ),
                 ],
               ),
             ),
             ReusableContainer(
-              backgroundColor: backgroundColorReusableConainter,
+              backgroundColor: cardBackgroundColor,
               cardChild: CardWidget(
                 icon: Icons.add,
-                iconColor: Colors.white,
-                title: "",
+                title: "THIRD",
+                titleColor: cardFontColor,
               ),
             ),
             Expanded(
               child: Row(
                 children: [
                   ReusableContainer(
-                    backgroundColor: backgroundColorReusableConainter,
+                    backgroundColor: cardBackgroundColor,
                     cardChild: CardWidget(
                       icon: Icons.add,
-                      iconColor: Colors.white,
-                      title: "MALE",
+                      title: "FOUR",
+                      titleColor: cardFontColor,
                     ),
                   ),
                   ReusableContainer(
-                    backgroundColor: backgroundColorReusableConainter,
+                    backgroundColor: cardBackgroundColor,
                     cardChild: CardWidget(
                       icon: Icons.add,
-                      iconColor: Colors.white,
-                      title: "MALE",
+                      title: "FIVE",
+                      titleColor: cardFontColor,
                     ),
                   ),
                 ],
@@ -116,41 +118,6 @@ class _InputPageState extends State<InputPage> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class CardWidget extends StatelessWidget {
-  final Color iconColor;
-  final IconData icon;
-  final String title;
-
-  const CardWidget({
-    required this.iconColor,
-    required this.icon,
-    required this.title,
-  });
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          icon,
-          size: 80.0,
-          color: iconColor,
-        ),
-        SizedBox(
-          height: 15.0,
-        ),
-        Text(
-          title,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 18.0,
-          ),
-        ),
-      ],
     );
   }
 }

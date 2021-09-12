@@ -16,6 +16,7 @@ Start at 12:00PM 12/09/2021
 3-HOW TO REFACTOR FLUTTER WIDGET. [20M 5S]  
 4-Immutability and final vs. const [18m 24s]  
 5-Creating Custom Widgets.[18m 25s]  
+6-Gesturee detector widget.[12m 3s]
 
 ## Getting Started
 
