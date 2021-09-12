@@ -5,9 +5,8 @@ Course Link https://www.linkedin.com/learning/flutter-part-07-building-the-ui-or
 
 log Update
 --------------------------
-Start at 2:30PM 11/09/2021
-
-STATUS OF THINGS DONE:
+Start at 2:30PM 11/09/2021  
+STATUS OF THINGS DONE:  
 1-BMI calculator: A beautiful health app:2m 2s  
 2-HOW TO USE FLUTTER THEMES:23M 28S  
 GIT UPDATE.  
