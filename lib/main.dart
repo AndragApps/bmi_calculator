@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_Widgets/containerWidget.dart';
 
 ///START CONST PROPETIES.
@@ -17,8 +18,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Color(0xFF0A0E21),
+        appBarTheme: AppBarTheme(
+          color: Color(0xFF0A0E21),
+        ),
         scaffoldBackgroundColor: Color(0xFF0A0E21),
         textTheme: TextTheme(
           bodyText2: TextStyle(
@@ -54,21 +59,51 @@ class _InputPageState extends State<InputPage> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   ReusableContainer(
-                      backgroundColor: backgroundColorReusableConainter,cardChild: null,),
+                    backgroundColor: backgroundColorReusableConainter,
+                    cardChild: CardWidget(
+                      icon: FontAwesomeIcons.mars,
+                      iconColor: Colors.white,
+                      title: "MALE",
+                    ),
+                  ),
                   ReusableContainer(
-                      backgroundColor: backgroundColorReusableConainter),
+                    backgroundColor: backgroundColorReusableConainter,
+                    cardChild: CardWidget(
+                      icon: FontAwesomeIcons.mars,
+                      iconColor: Colors.white,
+                      title: "FEMALE",
+                    ),
+                  ),
                 ],
               ),
             ),
             ReusableContainer(
-                backgroundColor: backgroundColorReusableConainter),
+              backgroundColor: backgroundColorReusableConainter,
+              cardChild: CardWidget(
+                icon: Icons.add,
+                iconColor: Colors.white,
+                title: "",
+              ),
+            ),
             Expanded(
               child: Row(
                 children: [
                   ReusableContainer(
-                      backgroundColor: backgroundColorReusableConainter),
+                    backgroundColor: backgroundColorReusableConainter,
+                    cardChild: CardWidget(
+                      icon: Icons.add,
+                      iconColor: Colors.white,
+                      title: "MALE",
+                    ),
+                  ),
                   ReusableContainer(
-                      backgroundColor: backgroundColorReusableConainter),
+                    backgroundColor: backgroundColorReusableConainter,
+                    cardChild: CardWidget(
+                      icon: Icons.add,
+                      iconColor: Colors.white,
+                      title: "MALE",
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -81,6 +116,41 @@ class _InputPageState extends State<InputPage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class CardWidget extends StatelessWidget {
+  final Color iconColor;
+  final IconData icon;
+  final String title;
+
+  const CardWidget({
+    required this.iconColor,
+    required this.icon,
+    required this.title,
+  });
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          icon,
+          size: 80.0,
+          color: iconColor,
+        ),
+        SizedBox(
+          height: 15.0,
+        ),
+        Text(
+          title,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18.0,
+          ),
+        ),
+      ],
     );
   }
 }
