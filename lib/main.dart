@@ -12,6 +12,11 @@ const cardFontColor = Color(0xFF8D8E98);
 
 ///CONST PROPERTIES ENDS.
 
+///START OF ENUM.
+enum Gender { Male, Female }
+
+///END OF ENUM
+
 void main() {
   runApp(MyApp());
 }
@@ -47,12 +52,11 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  @override
   Color maleBackgroundColor = inactiveCardColor;
   Color femaleBackgroundColor = inactiveCardColor;
 
-  void updateCardColor({required bool isMale}) {
-    if (isMale) {
+  void updateCardColor({required Gender gender}) {
+    if (gender == Gender.Male) {
       if (maleBackgroundColor == inactiveCardColor) {
         femaleBackgroundColor = inactiveCardColor;
         maleBackgroundColor = activeCardColor;
@@ -60,7 +64,7 @@ class _InputPageState extends State<InputPage> {
         maleBackgroundColor = inactiveCardColor;
       }
     }
-    if (!isMale) {
+    if (gender == Gender.Female) {
       if (femaleBackgroundColor == inactiveCardColor) {
         maleBackgroundColor = inactiveCardColor;
         femaleBackgroundColor = activeCardColor;
@@ -85,7 +89,7 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: GestureDetector(
                       onTap: () {
-                        setState(() => updateCardColor(isMale: true));
+                        setState(() => updateCardColor(gender: Gender.Male));
                       },
                       child: ReusableContainer(
                         backgroundColor: maleBackgroundColor,
@@ -100,7 +104,7 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: GestureDetector(
                       onTap: () {
-                        setState(() => updateCardColor(isMale: false));
+                        setState(() => updateCardColor(gender: Gender.Female));
                       },
                       child: ReusableContainer(
                         backgroundColor: femaleBackgroundColor,
