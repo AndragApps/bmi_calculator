@@ -8,18 +8,15 @@ log Update
 Start at 2:30PM 11/09/2021
 
 STATUS OF THINGS DONE:
-1-BMI calculator: A beautiful health app:2m 2s
-
-2-HOW TO USE FLUTTER THEMES:23M 28S
-
-GIT UPDATE.
-
+1-BMI calculator: A beautiful health app:2m 2s  
+2-HOW TO USE FLUTTER THEMES:23M 28S  
+GIT UPDATE.  
 Ends at 3:20PM 11/09/2021
 
-Start at 12:00PM 12/09/2021
-
+Start at 12:00PM 12/09/2021  
 3-HOW TO REFACTOR FLUTTER WIDGET. [20M 5S]  
-4-Immutability and final vs. const [18m 24s]
+4-Immutability and final vs. const [18m 24s]  
+5-Creating Custom Widgets.[18m 25s]  
 
 ## Getting Started
 
