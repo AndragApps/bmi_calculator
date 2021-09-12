@@ -18,7 +18,7 @@ Ends at 3:20PM 11/09/2021
 
 Start at 12:00PM 12/09/2021
 
-3-HOW TO REFACTOR FLUTTER WIDGET. [20M 5S]
+3-HOW TO REFACTOR FLUTTER WIDGET. [20M 5S]  
 4-Immutability and final vs. const [18m 24s]
 
 ## Getting Started
