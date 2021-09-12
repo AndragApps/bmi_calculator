@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'reusable_Widgets/containerWidget.dart';
+
+///START CONST PROPETIES.
+const heightBottomConainer = 80.0;
+const colorBottomConainer = Color(0xFFEB1555);
+const backgroundColorReusableConainter = Color(0XFF1D1E33);
+
+///CONST PROPERTIES ENDS.
 
 void main() {
   runApp(MyApp());
@@ -39,60 +47,36 @@ class _InputPageState extends State<InputPage> {
       ),
       body: Container(
         child: Column(
-          mainAxisSize: MainAxisSize.max,
+          // mainAxisSize: MainAxisSize.max,
           children: [
             Expanded(
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                          color: Color(0XFF1D1E33),
-                          borderRadius: BorderRadius.circular(15.0)),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                          color: Color(0XFF1D1E33),
-                          borderRadius: BorderRadius.circular(15.0)),
-                    ),
-                  ),
+                  ReusableContainer(
+                      backgroundColor: backgroundColorReusableConainter),
+                  ReusableContainer(
+                      backgroundColor: backgroundColorReusableConainter),
                 ],
               ),
             ),
-            Expanded(
-              child: Container(
-                margin: EdgeInsets.all(15.0),
-                decoration: BoxDecoration(
-                    color: Color(0XFF1D1E33),
-                    borderRadius: BorderRadius.circular(15.0)),
-              ),
-            ),
+            ReusableContainer(
+                backgroundColor: backgroundColorReusableConainter),
             Expanded(
               child: Row(
                 children: [
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                          color: Color(0XFF1D1E33),
-                          borderRadius: BorderRadius.circular(15.0)),
-                    ),
-                  ),
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(15.0),
-                      decoration: BoxDecoration(
-                          color: Color(0XFF1D1E33),
-                          borderRadius: BorderRadius.circular(15.0)),
-                    ),
-                  ),
+                  ReusableContainer(
+                      backgroundColor: backgroundColorReusableConainter),
+                  ReusableContainer(
+                      backgroundColor: backgroundColorReusableConainter),
                 ],
               ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10.0),
+              height: heightBottomConainer,
+              color: colorBottomConainer,
+              width: double.infinity,
             ),
           ],
         ),
