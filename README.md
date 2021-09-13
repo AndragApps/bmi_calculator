@@ -17,7 +17,10 @@ Start at 12:00PM 12/09/2021
 4-Immutability and final vs. const [18m 24s]  
 5-Creating Custom Widgets.[18m 25s]  
 6-Gesturee detector widget.[12m 3s]  
-7-Dart Enums[11m 19s]    
+7-Dart Enums[11m 19s]  
+8-Dart ternary operator[13m 7s]  
+9-Dart first-class objects[15m 4s]  
+  
 
 ## Getting Started
 
