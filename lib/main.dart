@@ -70,44 +70,40 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: [
                   Expanded(
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() => {
-                              selectedGender = (selectedGender == Gender.male
-                                  ? Gender.none
-                                  : Gender.male)
-                            });
+                    child: ReusableContainer(
+                      onTapFunction: () {
+                        setState(() {
+                          selectedGender = (selectedGender == Gender.male
+                              ? Gender.none
+                              : Gender.male);
+                        });
                       },
-                      child: ReusableContainer(
-                        backgroundColor: selectedGender == Gender.male
-                            ? activeCardColor
-                            : inactiveCardColor,
-                        cardChild: CardWidget(
-                          icon: FontAwesomeIcons.mars,
-                          title: "MALE",
-                          titleColor: cardFontColor,
-                        ),
+                      backgroundColor: selectedGender == Gender.male
+                          ? activeCardColor
+                          : inactiveCardColor,
+                      cardChild: CardWidget(
+                        icon: FontAwesomeIcons.mars,
+                        title: "MALE",
+                        titleColor: cardFontColor,
                       ),
                     ),
                   ),
                   Expanded(
-                    child: GestureDetector(
-                      onTap: () {
-                        setState(() => {
-                              selectedGender = (selectedGender == Gender.female
-                                  ? Gender.none
-                                  : Gender.female)
-                            });
+                    child: ReusableContainer(
+                      onTapFunction: () {
+                        setState(() {
+                          selectedGender = (selectedGender == Gender.female
+                              ? Gender.none
+                              : Gender.female);
+                        });
                       },
-                      child: ReusableContainer(
-                        backgroundColor: selectedGender == Gender.female
-                            ? activeCardColor
-                            : inactiveCardColor,
-                        cardChild: CardWidget(
-                          icon: FontAwesomeIcons.venus,
-                          title: "FEMALE",
-                          titleColor: cardFontColor,
-                        ),
+                      backgroundColor: selectedGender == Gender.female
+                          ? activeCardColor
+                          : inactiveCardColor,
+                      cardChild: CardWidget(
+                        icon: FontAwesomeIcons.venus,
+                        title: "FEMALE",
+                        titleColor: cardFontColor,
                       ),
                     ),
                   ),
