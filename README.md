@@ -1,5 +1,5 @@
 # bmi_calculator
-
+--------------------------
 A new Flutter project.
 Course Link https://www.linkedin.com/learning/flutter-part-07-building-the-ui-or-flutter-part-07-building-uis/how-to-use-flutter-themes
 
@@ -25,9 +25,11 @@ Ends at 3:15PM 13/09/2021
   
 Start at 10:25PM 14/09/2021  
 10-Flutter Slider Widget.[25m 24s]  
-11-Customizing Flutter Widget Using THEMES.[11m 49s]
+11-Customizing Flutter Widget Using THEMES.[11m 49s]  
+12-Flutter Widgets from scratch.[27m 43s]  
 
-Ends at 3:15PM 14/09/2021
+Ends at 1:30PM 14/09/2021  
+--------------------------
 ## Getting Started
 
 This project is a starting point for a Flutter application.
