@@ -20,6 +20,8 @@ Start at 12:00PM 12/09/2021
 7-Dart Enums[11m 19s]  
 8-Dart ternary operator[13m 7s]  
 9-Dart first-class objects[15m 4s]  
+10-Flutter Slider Widget.[25m 24s]  
+
   
 
 ## Getting Started

@@ -1,16 +1,9 @@
 import 'package:bmi_calculator/reusable_Widgets/cardWidget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'constants.dart';
 import 'reusable_Widgets/containerWidget.dart';
-
-///START CONST PROPETIES.
-const heightBottomConainer = 80.0;
-const colorBottomConainer = Color(0xFFEB1555);
-const activeCardColor = Color(0XFF1D1E33);
-const inactiveCardColor = Color(0XFF111328);
-const cardFontColor = Color(0xFF8D8E98);
-
-///CONST PROPERTIES ENDS.
 
 ///START OF ENUM.
 enum Gender {
@@ -79,12 +72,11 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       backgroundColor: selectedGender == Gender.male
-                          ? activeCardColor
-                          : inactiveCardColor,
+                          ? kActiveCardColor
+                          : kInactiveCardColor,
                       cardChild: CardWidget(
                         icon: FontAwesomeIcons.mars,
                         title: "MALE",
-                        titleColor: cardFontColor,
                       ),
                     ),
                   ),
@@ -98,12 +90,11 @@ class _InputPageState extends State<InputPage> {
                         });
                       },
                       backgroundColor: selectedGender == Gender.female
-                          ? activeCardColor
-                          : inactiveCardColor,
+                          ? kActiveCardColor
+                          : kInactiveCardColor,
                       cardChild: CardWidget(
                         icon: FontAwesomeIcons.venus,
                         title: "FEMALE",
-                        titleColor: cardFontColor,
                       ),
                     ),
                   ),
@@ -112,11 +103,30 @@ class _InputPageState extends State<InputPage> {
             ),
             Expanded(
               child: ReusableContainer(
-                backgroundColor: activeCardColor,
-                cardChild: CardWidget(
-                  icon: Icons.add,
-                  title: "THIRD",
-                  titleColor: cardFontColor,
+                backgroundColor: kActiveCardColor,
+                cardChild: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "HEIGHT",
+                      style: kTitleTextStyle,
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "180",
+                          style: kHeightTextStyle,
+                        ),
+                        Text(
+                          "cm",
+                          style: kTitleTextStyle,
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -125,21 +135,19 @@ class _InputPageState extends State<InputPage> {
                 children: [
                   Expanded(
                     child: ReusableContainer(
-                      backgroundColor: activeCardColor,
+                      backgroundColor: kActiveCardColor,
                       cardChild: CardWidget(
                         icon: Icons.add,
                         title: "FOUR",
-                        titleColor: cardFontColor,
                       ),
                     ),
                   ),
                   Expanded(
                     child: ReusableContainer(
-                      backgroundColor: activeCardColor,
+                      backgroundColor: kActiveCardColor,
                       cardChild: CardWidget(
                         icon: Icons.add,
                         title: "FIVE",
-                        titleColor: cardFontColor,
                       ),
                     ),
                   ),
@@ -148,8 +156,8 @@ class _InputPageState extends State<InputPage> {
             ),
             Container(
               margin: EdgeInsets.only(top: 10.0),
-              height: heightBottomConainer,
-              color: colorBottomConainer,
+              height: kHeightBottomConainer,
+              color: kColorBottomConainer,
               width: double.infinity,
             ),
           ],

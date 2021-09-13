@@ -18,7 +18,9 @@ class ReusableContainer extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.all(15.0),
         decoration: BoxDecoration(
-            color: backgroundColor, borderRadius: BorderRadius.circular(15.0)),
+          color: backgroundColor,
+          borderRadius: BorderRadius.circular(15.0),
+        ),
         child: cardChild,
       ),
     );
