@@ -16,6 +16,9 @@ const kCardFontColor = Color(0xFF8D8E98);
 const kIconColor = kDefaultIconColor;
 const kTitle = kDefaultTitle;
 const kTitleColor = kDefaultCardFontColor;
+const kSliderActiveColor = Color(0xFFEB1555);
+const kSliderInActiveColor =Color(0xFF8D8E98);
+
 
 ///ENDS CONST PROPETIES.
 

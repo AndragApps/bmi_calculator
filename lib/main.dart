@@ -50,6 +50,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   late Gender selectedGender = Gender.none;
+  int height = 180;
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -117,7 +118,7 @@ class _InputPageState extends State<InputPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "180",
+                          height.toString(),
                           style: kHeightTextStyle,
                         ),
                         Text(
@@ -125,6 +126,19 @@ class _InputPageState extends State<InputPage> {
                           style: kTitleTextStyle,
                         ),
                       ],
+                    ),
+                    Slider(
+                      min: 120,
+                      max: 220,
+                      value: height.toDouble(),
+                      activeColor: kSliderActiveColor,
+                      inactiveColor: kSliderInActiveColor,
+                      onChanged: (double value) {
+                        setState(() {
+                          height = value.round();
+                          print(value);
+                        });
+                      },
                     ),
                   ],
                 ),
