@@ -52,6 +52,7 @@ class _InputPageState extends State<InputPage> {
   late Gender selectedGender = Gender.none;
   int height = 180;
   int weight = 55;
+  int age = 26;
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -183,7 +184,7 @@ class _InputPageState extends State<InputPage> {
                                 icon: FontAwesomeIcons.minus,
                                 onPress: () {
                                   setState(() {
-                                    weight--;
+                                    if (weight > 5) weight--;
                                   });
                                 },
                               ),
@@ -192,7 +193,7 @@ class _InputPageState extends State<InputPage> {
                                 icon: FontAwesomeIcons.plus,
                                 onPress: () {
                                   setState(() {
-                                    weight++;
+                                    if (weight < 300) weight++;
                                   });
                                 },
                               ),
@@ -205,9 +206,40 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableContainer(
                       backgroundColor: kActiveCardColor,
-                      cardChild: CardWidget(
-                        icon: Icons.add,
-                        title: "FIVE",
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "AGE",
+                            style: kTitleTextStyle,
+                          ),
+                          Text(
+                            age.toString(),
+                            style: kHeightTextStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.minus,
+                                onPress: () {
+                                  setState(() {
+                                    if (age > 1) age--;
+                                  });
+                                },
+                              ),
+                              SizedBox(width: 10.0),
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.plus,
+                                onPress: () {
+                                  setState(() {
+                                    if (age < 99) age++;
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),

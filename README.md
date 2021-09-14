@@ -27,8 +27,11 @@ Start at 10:25PM 14/09/2021
 10-Flutter Slider Widget.[25m 24s]  
 11-Customizing Flutter Widget Using THEMES.[11m 49s]  
 12-Flutter Widgets from scratch.[27m 43s]  
+Ends at 1:00PM 14/09/2021  
 
-Ends at 1:30PM 14/09/2021  
+Start at 00:00AM 15/09/2021    
+13-.[]  
+Ends at 1:00PM 14/09/2021  
 --------------------------
 ## Getting Started
 
