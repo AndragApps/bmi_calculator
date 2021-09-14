@@ -51,7 +51,9 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   late Gender selectedGender = Gender.none;
   int height = 180;
+  int weight = 55;
   Widget build(BuildContext context) {
+    double size = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text("BMI CALCULATOR"),
@@ -127,26 +129,30 @@ class _InputPageState extends State<InputPage> {
                         ),
                       ],
                     ),
-                    SliderTheme(
-                      data: SliderTheme.of(context).copyWith(
-                        activeTrackColor: Colors.white,
-                        inactiveTrackColor: kSliderInActiveColor,
-                        thumbColor: kSliderActiveColor,
-                        thumbShape:
-                            RoundSliderThumbShape(enabledThumbRadius: 15),
-                        overlayColor: Color(0x29EB1555),
-                        overlayShape:
-                            RoundSliderOverlayShape(overlayRadius: 30),
-                      ),
-                      child: Slider(
-                        min: 120,
-                        max: 220,
-                        value: height.toDouble(),
-                        onChanged: (double value) {
-                          setState(() {
-                            height = value.round();
-                          });
-                        },
+                    SizedBox(
+                      width: (size - 100),
+                      child: SliderTheme(
+                        data: SliderTheme.of(context).copyWith(
+                          trackHeight: 0.2,
+                          activeTrackColor: Colors.white,
+                          inactiveTrackColor: kSliderInActiveColor,
+                          thumbColor: kSliderActiveColor,
+                          thumbShape:
+                              RoundSliderThumbShape(enabledThumbRadius: 15),
+                          overlayColor: Color(0x29EB1555),
+                          overlayShape:
+                              RoundSliderOverlayShape(overlayRadius: 30),
+                        ),
+                        child: Slider(
+                          min: 120,
+                          max: 220,
+                          value: height.toDouble(),
+                          onChanged: (double value) {
+                            setState(() {
+                              height = value.round();
+                            });
+                          },
+                        ),
                       ),
                     ),
                   ],
@@ -159,9 +165,40 @@ class _InputPageState extends State<InputPage> {
                   Expanded(
                     child: ReusableContainer(
                       backgroundColor: kActiveCardColor,
-                      cardChild: CardWidget(
-                        icon: Icons.add,
-                        title: "FOUR",
+                      cardChild: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "WEIGHT",
+                            style: kTitleTextStyle,
+                          ),
+                          Text(
+                            weight.toString(),
+                            style: kHeightTextStyle,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.minus,
+                                onPress: () {
+                                  setState(() {
+                                    weight--;
+                                  });
+                                },
+                              ),
+                              SizedBox(width: 10.0),
+                              RoundIconButton(
+                                icon: FontAwesomeIcons.plus,
+                                onPress: () {
+                                  setState(() {
+                                    weight++;
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -186,6 +223,34 @@ class _InputPageState extends State<InputPage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class RoundIconButton extends StatelessWidget {
+  final IconData icon;
+  final Function() onPress;
+  const RoundIconButton({
+    required this.icon,
+    required this.onPress,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return RawMaterialButton(
+      onPressed: onPress,
+      child: Icon(
+        icon,
+        color: Colors.white,
+      ),
+      elevation: 0.0,
+      disabledElevation: 1.0,
+      constraints: BoxConstraints.tightFor(
+        width: 56.0,
+        height: 56.0,
+      ),
+      fillColor: kRoundButtonColor,
+      shape: CircleBorder(),
     );
   }
 }
