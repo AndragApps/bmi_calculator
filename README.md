@@ -28,10 +28,9 @@ Start at 10:25PM 14/09/2021
 11-Customizing Flutter Widget Using THEMES.[11m 49s]  
 12-Flutter Widgets from scratch.[27m 43s]  
 Ends at 1:00PM 14/09/2021  
-
 Start at 00:00AM 15/09/2021  
 13-Routes and Navigation.[21m 40s]  
-14-Calculator Model and String Manipulation.[13m 22s]
+14-Calculator Model and String Manipulation.[13m 22s]  
 Ends at 3:20PM 15/09/2021  
 --------------------------
 ## Getting Started
