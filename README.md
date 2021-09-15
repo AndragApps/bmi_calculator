@@ -5,21 +5,21 @@ Course Link https://www.linkedin.com/learning/flutter-part-07-building-the-ui-or
 
 Things I have learned from the course.
 --------------------------
-1-BMI calculator: A beautiful health app.
-2-HOW TO USE FLUTTER THEMES.
-3-HOW TO REFACTOR FLUTTER WIDGET.
-4-Immutability and final vs. const.
-5-Creating Custom Widgets.
-6-Gesturee detector widget.
-7-Dart Enums.
-8-Dart ternary operator.
-9-Dart first-class objects.
-10-Flutter Slider Widget.
-10-Flutter Slider Widget.
-11-Customizing Flutter Widget Using THEMES. 
-12-Flutter Widgets from scratch.
-13-Routes and Navigation.
-14-Calculator Model and String Manipulation.
+1-BMI calculator: A beautiful health app.  
+2-HOW TO USE FLUTTER THEMES.  
+3-HOW TO REFACTOR FLUTTER WIDGET.  
+4-Immutability and final vs. const.  
+5-Creating Custom Widgets.  
+6-Gesturee detector widget.  
+7-Dart Enums.  
+8-Dart ternary operator.  
+9-Dart first-class objects.  
+10-Flutter Slider Widget.  
+10-Flutter Slider Widget.  
+11-Customizing Flutter Widget Using THEMES.  
+12-Flutter Widgets from scratch.  
+13-Routes and Navigation.  
+14-Calculator Model and String Manipulation.  
 
 Finally, Received my Flutter Certificate!
 --------------------------
