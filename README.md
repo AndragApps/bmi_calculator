@@ -29,8 +29,8 @@ Start at 10:25PM 14/09/2021
 12-Flutter Widgets from scratch.[27m 43s]  
 Ends at 1:00PM 14/09/2021  
 
-Start at 00:00AM 15/09/2021    
-13-.[]  
+Start at 00:00AM 15/09/2021  
+13-Routes and Navigation.[21m 40s]  
 Ends at 1:00PM 14/09/2021  
 --------------------------
 ## Getting Started
