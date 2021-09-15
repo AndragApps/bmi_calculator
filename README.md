@@ -32,6 +32,7 @@ Start at 00:00AM 15/09/2021
 13-Routes and Navigation.[21m 40s]  
 14-Calculator Model and String Manipulation.[13m 22s]  
 Ends at 3:20PM 15/09/2021  
+
 --------------------------
 ## Getting Started
 
