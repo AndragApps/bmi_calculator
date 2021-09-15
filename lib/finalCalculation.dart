@@ -4,8 +4,13 @@ import 'constants.dart';
 import 'package:bmi_calculator/reusable_Widgets/containerWidget.dart';
 
 class FinalResultPage extends StatelessWidget {
-  const FinalResultPage({Key? key}) : super(key: key);
-
+  FinalResultPage(
+      {required this.result,
+      required this.bmiData,
+      required this.resultInterpretaion});
+  final String result;
+  final String bmiData;
+  final String resultInterpretaion;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +39,7 @@ class FinalResultPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "Normal",
+                    result,
                     style: kHeightTextStyle.copyWith(
                       color: Color(0xFF24D876),
                       fontSize: 22,
@@ -42,7 +47,7 @@ class FinalResultPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   Text(
-                    "89.56",
+                    bmiData,
                     style: kHeightTextStyle.copyWith(
                       fontSize: 100.0,
                     ),
@@ -51,7 +56,7 @@ class FinalResultPage extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 15.0),
                     child: Text(
-                      "You BMI result quite low, you should eat more!",
+                      resultInterpretaion,
                       style: kTitleTextStyle.copyWith(
                         color: Colors.white,
                         fontSize: 22,

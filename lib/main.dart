@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'constants.dart';
 import 'reusable_Widgets/containerWidget.dart';
 import 'finalCalculation.dart';
+import 'Logic/calculation.dart';
 
 ///START OF ENUM.
 enum Gender {
@@ -251,10 +252,18 @@ class _InputPageState extends State<InputPage> {
             BottomButton(
               buttonLabel: 'CALCULATE',
               onTap: () {
+                BMICalculation bmiCalculation = BMICalculation(
+                  height: height,
+                  weight: weight,
+                );
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => FinalResultPage(),
+                    builder: (context) => FinalResultPage(
+                      bmiData: bmiCalculation.calcilateBMI(),
+                      result: bmiCalculation.getResult().toUpperCase(),
+                      resultInterpretaion: bmiCalculation.getInterpretation(),
+                    ),
                   ),
                 );
               },
