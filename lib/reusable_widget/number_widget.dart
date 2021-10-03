@@ -9,12 +9,14 @@ import '../../constant.dart';
 class NumberWidget extends StatelessWidget {
   const NumberWidget({
     Key? key,
-    this.stringValue,
     this.withPadding = true,
+    this.doubleValue,
+    this.intValue,
   }) : super(key: key);
 
   final bool? withPadding;
-  final String? stringValue;
+  final double? doubleValue;
+  final int? intValue;
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +25,17 @@ class NumberWidget extends StatelessWidget {
           ? const EdgeInsets.only(left: 25.0)
           : const EdgeInsets.all(0),
       child: Text(
-        "$stringValue",
+        toStringValue(),
         style: kNumberStyle,
       ),
     );
+  }
+
+  String toStringValue() {
+    if (doubleValue != null) {
+      return doubleValue!.toStringAsFixed(2);
+    } else {
+      return (intValue! <= 9 ? "0$intValue" : intValue).toString();
+    }
   }
 }

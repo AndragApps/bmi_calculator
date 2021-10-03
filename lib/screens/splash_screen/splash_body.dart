@@ -20,7 +20,7 @@ class SplashBodyWidget extends StatefulWidget {
 }
 
 class _SplashBodyWidgetState extends State<SplashBodyWidget> {
-  SpiBrain spiBrainObj = SpiBrain();
+  SipBrain sipBrainObj = SipBrain();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,18 +31,16 @@ class _SplashBodyWidgetState extends State<SplashBodyWidget> {
         Expanded(
           child: ContainerWidget(
             children: [
-              NumberWidget(
-                  stringValue:
-                      spiBrainObj.getMonthlyInvestmentAmt().toString()),
+              NumberWidget(intValue: sipBrainObj.getMonthlyInvestmentAmt()),
               LableWidget(label: kMonthlyInvestmentAmountLbl),
               SliderThemeWidget(
                 child: Slider(
                   min: 1000,
                   max: 100000,
-                  value: spiBrainObj.getMonthlyInvestmentAmt().toDouble(),
+                  value: sipBrainObj.getMonthlyInvestmentAmt().toDouble(),
                   onChanged: (double value) {
                     setState(() {
-                      spiBrainObj.setMonthlyInvestmentAmt(value.round());
+                      sipBrainObj.setMonthlyInvestmentAmt(value.round());
                     });
                   },
                 ),
@@ -57,21 +55,17 @@ class _SplashBodyWidgetState extends State<SplashBodyWidget> {
             children: [
               Expanded(
                 child: ContainerWidget(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.baseline,
-                      textBaseline: TextBaseline.alphabetic,
+                    Column(
                       children: [
                         NumberWidget(
-                          stringValue: "1",
+                          intValue: sipBrainObj.getInvestmentPeriodInMonth(),
                           withPadding: false,
                         ),
                         LableWidget(
-                          label: "Month",
+                          label: " Months",
                           withPadding: false,
                         ),
                       ],
@@ -81,11 +75,19 @@ class _SplashBodyWidgetState extends State<SplashBodyWidget> {
                       children: [
                         RoundIconButton(
                           icon: Icons.remove,
-                          onPress: () {},
+                          onPress: () {
+                            setState(() {
+                              sipBrainObj.removeInvestmentPeriodInMonth();
+                            });
+                          },
                         ),
                         RoundIconButton(
                           icon: Icons.add,
-                          onPress: () {},
+                          onPress: () {
+                            setState(() {
+                              sipBrainObj.addInvestmentPeriodInMonth();
+                            });
+                          },
                         ),
                       ],
                     ),
@@ -105,18 +107,16 @@ class _SplashBodyWidgetState extends State<SplashBodyWidget> {
         Expanded(
           child: ContainerWidget(
             children: [
-              NumberWidget(
-                  stringValue:
-                      spiBrainObj.getExpectedReturns().toStringAsFixed(2)),
+              NumberWidget(doubleValue: sipBrainObj.getExpectedReturns()),
               LableWidget(label: kExpectedReturnsLbl),
               SliderThemeWidget(
                 child: Slider(
                   min: 1.0,
                   max: 100.0,
-                  value: spiBrainObj.getExpectedReturns().toDouble(),
+                  value: sipBrainObj.getExpectedReturns().toDouble(),
                   onChanged: (double value) {
                     setState(() {
-                      spiBrainObj.setExpectedReturns(value);
+                      sipBrainObj.setExpectedReturns(value);
                     });
                   },
                 ),

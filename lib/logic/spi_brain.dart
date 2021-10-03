@@ -1,17 +1,17 @@
 import '../../constant.dart';
 
-class SpiBrain {
+class SipBrain {
   late int _monthlyInvestmentAmt;
   late double _expectedReturns;
   late int _investmentPeriodInMonth;
   late int _investmentPeriodInYear;
 
   ///Constructor
-  SpiBrain({
+  SipBrain({
     int? monthlyInvestmentAmt,
     double? expectedReturns,
-    int? investmentPeriodInMonth,
-    int? investmentPeriodInYear,
+    int? investmentPeriodInMonth = 1,
+    int? investmentPeriodInYear = 1,
   }) {
     _monthlyInvestmentAmt = monthlyInvestmentAmt ?? kMonthlyInvestmentAmount;
     _expectedReturns = expectedReturns ?? kExpectedReturns;
@@ -40,9 +40,18 @@ class SpiBrain {
     return _expectedReturns;
   }
 
-  ///Set Investment Period in Month, by default Min = 0,
-  void setInvestmentPeriodInMonth(int investmentPeriodInMonth) {
-    _investmentPeriodInMonth = investmentPeriodInMonth;
+  ///Add(+) Investment Period in Month, by default Min = 0,
+  void addInvestmentPeriodInMonth() {
+    _investmentPeriodInMonth < 12
+        ? _investmentPeriodInMonth++
+        : _investmentPeriodInMonth;
+  }
+
+  ///Remove(-) Investment Period in Month, by default Min = 0,
+  void removeInvestmentPeriodInMonth() {
+    _investmentPeriodInMonth > 1
+        ? _investmentPeriodInMonth--
+        : _investmentPeriodInMonth;
   }
 
   ///Get Investment Period in Month, by default Min = 0,
@@ -53,6 +62,18 @@ class SpiBrain {
   ///Set Investment Period in Year, by default Min = 0,
   void setInvestmentPeriodInYear(int investmentPeriodInYear) {
     _investmentPeriodInYear = investmentPeriodInYear;
+  }
+
+  ///Add(+) Investment Period in Year, by default Min = 0,
+  void addInvestmentPeriodInYear() {
+    _investmentPeriodInYear++;
+  }
+
+  ///Remove(-) Investment Period in Year, by default Min = 0,
+  void removeInvestmentPeriodInYear() {
+    _investmentPeriodInYear > 0
+        ? _investmentPeriodInYear--
+        : _investmentPeriodInYear;
   }
 
   ///Get Investment Period in Year, by default Min = 0,
