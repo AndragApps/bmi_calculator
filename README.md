@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # sipcalc
 
 A new Flutter project.
@@ -14,3 +15,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+=======
+# SIP_CALCULATOR
+A Systematic Investment Plan (SIP) calculator is an online financial tool that can help to calculate the returns you would earn on your SIP investments. The calculator also tells you how much you would need to invest every month to earn a target corpus.
+>>>>>>> 64e029f1082b81bba773849a6bab65822a091983
