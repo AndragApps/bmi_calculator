@@ -31,7 +31,9 @@ class _SplashBodyWidgetState extends State<SplashBodyWidget> {
         Expanded(
           child: ContainerWidget(
             children: [
-              NumberWidget(intValue: spiBrainObj.getMonthlyInvestmentAmt()),
+              NumberWidget(
+                  stringValue:
+                      spiBrainObj.getMonthlyInvestmentAmt().toString()),
               LableWidget(label: kMonthlyInvestmentAmountLbl),
               SliderThemeWidget(
                 child: Slider(
@@ -65,7 +67,7 @@ class _SplashBodyWidgetState extends State<SplashBodyWidget> {
                       textBaseline: TextBaseline.alphabetic,
                       children: [
                         NumberWidget(
-                          intValue: 1,
+                          stringValue: "1",
                           withPadding: false,
                         ),
                         LableWidget(

@@ -2,8 +2,6 @@
 
 import 'package:flutter/material.dart';
 
-import '../../constant.dart';
-
 class RoundIconButton extends StatelessWidget {
   final IconData icon;
   final Function() onPress;
