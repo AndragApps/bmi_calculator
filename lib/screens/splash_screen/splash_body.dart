@@ -2,9 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:sipcalc/logic/spi_brain.dart';
+import 'package:sipcalc/reusable_widget/bottombutton_widget.dart';
 import 'package:sipcalc/reusable_widget/container_widget.dart';
 import 'package:sipcalc/reusable_widget/iconbutton_widget.dart';
 import 'package:sipcalc/reusable_widget/lable_widget.dart';
+import 'package:sipcalc/reusable_widget/monthyear_widget.dart';
 import 'package:sipcalc/reusable_widget/number_widget.dart';
 import 'package:sipcalc/reusable_widget/sliderthene_widget.dart';
 
@@ -49,60 +51,6 @@ class _SplashBodyWidgetState extends State<SplashBodyWidget> {
           ),
         ),
 
-        ///Investment Monthly or yearly .
-        Expanded(
-          child: Row(
-            children: [
-              Expanded(
-                child: ContainerWidget(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Column(
-                      children: [
-                        NumberWidget(
-                          intValue: sipBrainObj.getInvestmentPeriodInMonth(),
-                          withPadding: false,
-                        ),
-                        LableWidget(
-                          label: " Months",
-                          withPadding: false,
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        RoundIconButton(
-                          icon: Icons.remove,
-                          onPress: () {
-                            setState(() {
-                              sipBrainObj.removeInvestmentPeriodInMonth();
-                            });
-                          },
-                        ),
-                        RoundIconButton(
-                          icon: Icons.add,
-                          onPress: () {
-                            setState(() {
-                              sipBrainObj.addInvestmentPeriodInMonth();
-                            });
-                          },
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: ContainerWidget(
-                  children: [],
-                ),
-              ),
-            ],
-          ),
-        ),
-
         ///Expected Return
         Expanded(
           child: ContainerWidget(
@@ -123,6 +71,52 @@ class _SplashBodyWidgetState extends State<SplashBodyWidget> {
               ),
             ],
           ),
+        ),
+
+        ///Investment Monthly or yearly .
+        Expanded(
+          child: Row(
+            children: [
+              Expanded(
+                child: MonthYearWidget(
+                  month: sipBrainObj.getInvestmentPeriodInMonth(),
+                  label: "Months",
+                  withPadding: false,
+                  onPressAdd: () {
+                    setState(() {
+                      sipBrainObj.addInvestmentPeriodInMonth();
+                    });
+                  },
+                  onPressRemove: () {
+                    setState(() {
+                      sipBrainObj.removeInvestmentPeriodInMonth();
+                    });
+                  },
+                ),
+              ),
+              Expanded(
+                child: MonthYearWidget(
+                  month: sipBrainObj.getInvestmentPeriodInYear(),
+                  label: "Years",
+                  withPadding: false,
+                  onPressAdd: () {
+                    setState(() {
+                      sipBrainObj.addInvestmentPeriodInYear();
+                    });
+                  },
+                  onPressRemove: () {
+                    setState(() {
+                      sipBrainObj.removeInvestmentPeriodInYear();
+                    });
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+        BottomButton(
+          buttonLabel: 'CALCULATE SIP',
+          onTap: () {},
         ),
       ],
     );

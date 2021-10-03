@@ -11,7 +11,7 @@ class SipBrain {
     int? monthlyInvestmentAmt,
     double? expectedReturns,
     int? investmentPeriodInMonth = 1,
-    int? investmentPeriodInYear = 1,
+    int? investmentPeriodInYear = 95,
   }) {
     _monthlyInvestmentAmt = monthlyInvestmentAmt ?? kMonthlyInvestmentAmount;
     _expectedReturns = expectedReturns ?? kExpectedReturns;
@@ -66,7 +66,9 @@ class SipBrain {
 
   ///Add(+) Investment Period in Year, by default Min = 0,
   void addInvestmentPeriodInYear() {
-    _investmentPeriodInYear++;
+    _investmentPeriodInYear < 99
+        ? _investmentPeriodInYear++
+        : _investmentPeriodInYear;
   }
 
   ///Remove(-) Investment Period in Year, by default Min = 0,

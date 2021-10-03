@@ -17,7 +17,7 @@ class LableWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: withPadding == true
-          ? const EdgeInsets.only(left: 25.0, top: 5.0, bottom: 5.0)
+          ? const EdgeInsets.only(left: 25.0, top: 2.5, bottom: 2.5)
           : const EdgeInsets.all(0),
       child: Text(
         label,

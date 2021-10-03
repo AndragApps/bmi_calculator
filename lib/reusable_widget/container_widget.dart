@@ -18,12 +18,13 @@ class ContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(20.0),
+      margin: EdgeInsets.all(15.0),
       padding: EdgeInsets.all(20.0),
       color: kPrimaryColor,
       child: Column(
         crossAxisAlignment: crossAxisAlignment,
         mainAxisAlignment: mainAxisAlignment,
+        mainAxisSize: MainAxisSize.max,
         children: children,
       ),
     );
