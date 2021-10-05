@@ -33,7 +33,7 @@ class NumberWidget extends StatelessWidget {
 
   String toStringValue() {
     if (doubleValue != null) {
-      return doubleValue!.toStringAsFixed(2);
+      return "${doubleValue!.toStringAsFixed(2)}%";
     } else {
       return (intValue! <= 9 ? "0$intValue" : intValue).toString();
     }

@@ -1,4 +1,5 @@
 import '../../constant.dart';
+import 'dart:math';
 
 class SipBrain {
   late int _monthlyInvestmentAmt;
@@ -8,12 +9,12 @@ class SipBrain {
 
   ///Constructor
   SipBrain({
-    int? monthlyInvestmentAmt,
-    double? expectedReturns,
-    int? investmentPeriodInMonth = 1,
-    int? investmentPeriodInYear = 95,
+    int? monthlyInvestmentAmt = kInvestmentAmount,
+    double? expectedReturns = kExpectedReturns,
+    int? investmentPeriodInMonth = kInvestmentPeriodMonth,
+    int? investmentPeriodInYear = kInvestmentPeriodYear,
   }) {
-    _monthlyInvestmentAmt = monthlyInvestmentAmt ?? kMonthlyInvestmentAmount;
+    _monthlyInvestmentAmt = monthlyInvestmentAmt ?? kInvestmentAmount;
     _expectedReturns = expectedReturns ?? kExpectedReturns;
     _investmentPeriodInMonth =
         investmentPeriodInMonth ?? kInvestmentPeriodMonth;
@@ -49,7 +50,7 @@ class SipBrain {
 
   ///Remove(-) Investment Period in Month, by default Min = 0,
   void removeInvestmentPeriodInMonth() {
-    _investmentPeriodInMonth > 1
+    _investmentPeriodInMonth > 0
         ? _investmentPeriodInMonth--
         : _investmentPeriodInMonth;
   }
@@ -81,5 +82,36 @@ class SipBrain {
   ///Get Investment Period in Year, by default Min = 0,
   int getInvestmentPeriodInYear() {
     return _investmentPeriodInYear;
+  }
+
+  ///Get SIP Result
+  int getSipResult(SipBrain _sipBrain) {
+    final int monthlyInvestmentAmt = _sipBrain.getMonthlyInvestmentAmt();
+    final double annualRate = _sipBrain.getExpectedReturns();
+    final int monthOfInvestment = _sipBrain.getInvestmentPeriodInMonth();
+    final int yearsOfInvestment = _sipBrain.getInvestmentPeriodInYear();
+
+    final double _monthlyRate = annualRate / 12 / 100;
+
+    ///Convert years into months
+    final int _months = monthOfInvestment + (yearsOfInvestment * 12);
+
+    final int sipAmt = monthlyInvestmentAmt *
+        (pow(1 + _monthlyRate, _months) - 1) ~/
+        _monthlyRate;
+    return sipAmt;
+  }
+
+  ///Get Invested Amount
+  int getInvestedAmount(SipBrain _sipBrain) {
+    final int monthlyInvestmentAmt = _sipBrain.getMonthlyInvestmentAmt();
+    final int monthOfInvestment = _sipBrain.getInvestmentPeriodInMonth();
+    final int yearsOfInvestment = _sipBrain.getInvestmentPeriodInYear();
+
+    ///Convert years into months
+    final int _months = monthOfInvestment + (yearsOfInvestment * 12);
+
+    final int investedAmt = _months * monthlyInvestmentAmt;
+    return investedAmt;
   }
 }

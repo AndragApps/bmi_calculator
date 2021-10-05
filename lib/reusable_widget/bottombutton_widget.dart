@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:sipcalc/constant.dart';
 
 class BottomButton extends StatelessWidget {
-  const BottomButton({required this.onTap, required this.buttonLabel});
+  const BottomButton({Key? key, required this.onTap, required this.buttonLabel})
+      : super(key: key);
 
   final Function() onTap;
   final String buttonLabel;

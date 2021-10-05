@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-const bool kDebugShowCheckedModeBanner = true;
+const bool kDebugShowCheckedModeBanner = false;
 const kTitle = "SIP Calculator";
-const kMonthlyInvestmentAmountLbl = "Monthly Investment Amount";
-const int kMonthlyInvestmentAmount = 2000;
-const kInvestmentPeriodInMonthLbl = "Investment Period in Month";
+const kInvestmentAmountLbl = "Monthly Investment Amount";
+const int kInvestmentAmount = 25000;
+const kInvestmentPeriodInMonthLbl = "Months";
 const int kInvestmentPeriodMonth = 0;
-const kInvestmentPeriodInYearLbl = "Investment Period in Year";
-const int kInvestmentPeriodYear = 5;
-const kExpectedReturnsLbl = "Expected Returns";
-const double kExpectedReturns = 8;
+const kInvestmentPeriodInYearLbl = "Years";
+const int kInvestmentPeriodYear = 10;
+const kExpectedReturnsLbl = "Annual Expected Returns";
+const double kExpectedReturns = 12;
 const kHeightBottomConainer = 80.0;
 
 const kPrimaryColor = Color(0xFF171717);

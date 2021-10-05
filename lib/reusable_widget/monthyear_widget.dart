@@ -30,13 +30,20 @@ class MonthYearWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        NumberWidget(
-          intValue: (month ?? year),
-          withPadding: withPadding,
-        ),
-        LableWidget(
-          label: " $label",
-          withPadding: withPadding,
+        Column(
+          children: [
+            LableWidget(
+              label: " $label",
+              withPadding: withPadding,
+            ),
+            SizedBox(
+              height: 8.0,
+            ),
+            NumberWidget(
+              intValue: (month ?? year),
+              withPadding: withPadding,
+            ),
+          ],
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:sipcalc/logic/spi_brain.dart';
 import 'package:sipcalc/reusable_widget/bottombutton_widget.dart';
 import 'package:sipcalc/reusable_widget/container_widget.dart';
-import 'package:sipcalc/reusable_widget/iconbutton_widget.dart';
+import 'package:sipcalc/reusable_widget/currencyformat_widget.dart';
 import 'package:sipcalc/reusable_widget/lable_widget.dart';
 import 'package:sipcalc/reusable_widget/monthyear_widget.dart';
 import 'package:sipcalc/reusable_widget/number_widget.dart';
 import 'package:sipcalc/reusable_widget/sliderthene_widget.dart';
+import 'package:sipcalc/screens/result_screen/sip_result_screen.dart';
 
 import '../../constant.dart';
 
@@ -22,19 +23,21 @@ class SplashBodyWidget extends StatefulWidget {
 }
 
 class _SplashBodyWidgetState extends State<SplashBodyWidget> {
-  SipBrain sipBrainObj = SipBrain();
+  final SipBrain sipBrainObj = SipBrain();
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        ///Monthly Investment Amount
+        ///Investment Amount
         Expanded(
           child: ContainerWidget(
             children: [
-              NumberWidget(intValue: sipBrainObj.getMonthlyInvestmentAmt()),
-              LableWidget(label: kMonthlyInvestmentAmountLbl),
+              CurrencyFormatWidget(
+                lable: kInvestmentAmountLbl,
+                amountInInt: sipBrainObj.getMonthlyInvestmentAmt(),
+              ),
               SliderThemeWidget(
                 child: Slider(
                   min: 1000,
@@ -55,8 +58,8 @@ class _SplashBodyWidgetState extends State<SplashBodyWidget> {
         Expanded(
           child: ContainerWidget(
             children: [
-              NumberWidget(doubleValue: sipBrainObj.getExpectedReturns()),
               LableWidget(label: kExpectedReturnsLbl),
+              NumberWidget(doubleValue: sipBrainObj.getExpectedReturns()),
               SliderThemeWidget(
                 child: Slider(
                   min: 1.0,
@@ -80,7 +83,7 @@ class _SplashBodyWidgetState extends State<SplashBodyWidget> {
               Expanded(
                 child: MonthYearWidget(
                   month: sipBrainObj.getInvestmentPeriodInMonth(),
-                  label: "Months",
+                  label: kInvestmentPeriodInMonthLbl,
                   withPadding: false,
                   onPressAdd: () {
                     setState(() {
@@ -97,7 +100,7 @@ class _SplashBodyWidgetState extends State<SplashBodyWidget> {
               Expanded(
                 child: MonthYearWidget(
                   month: sipBrainObj.getInvestmentPeriodInYear(),
-                  label: "Years",
+                  label: kInvestmentPeriodInYearLbl,
                   withPadding: false,
                   onPressAdd: () {
                     setState(() {
@@ -114,9 +117,20 @@ class _SplashBodyWidgetState extends State<SplashBodyWidget> {
             ],
           ),
         ),
+
+        ///Bottom Button
         BottomButton(
           buttonLabel: 'CALCULATE SIP',
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SipResultScreen(
+                  sipBrain: sipBrainObj,
+                ),
+              ),
+            );
+          },
         ),
       ],
     );

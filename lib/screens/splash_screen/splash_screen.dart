@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:sipcalc/constant.dart';
+
+import 'package:sipcalc/reusable_widget/scaffold_widget.dart';
 import 'package:sipcalc/screens/splash_screen/splash_body.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -11,11 +12,8 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: kPrimaryDarkColor,
-      body: SafeArea(
-        child: SplashBodyWidget(),
-      ),
+    return ScaffoldWidget(
+      child: SplashBodyWidget(),
     );
   }
 }
