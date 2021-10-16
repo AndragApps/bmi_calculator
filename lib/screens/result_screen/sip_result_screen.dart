@@ -18,103 +18,101 @@ class SipResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScaffoldWidget(
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          //Monthly Investment Amount
+          ContainerWidget(
+            children: [
+              CurrencyFormatWidget(
+                withPadding: false,
+                lable: kInvestmentAmountLbl,
+                amountInInt: sipBrain.getMonthlyInvestmentAmt(),
+              ),
+            ],
+          ),
+
+          //Annual Expected Returns
+          ContainerWidget(
+            children: [
+              LableWidget(
+                label: kExpectedReturnsLbl,
+                withPadding: false,
+              ),
+              NumberWidget(
+                doubleValue: sipBrain.getExpectedReturns(),
+                withPadding: false,
+              ),
+            ],
+          ),
+
+          //Invested Years and Months
+          ContainerWidget(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      LableWidget(
+                        label: kInvestmentPeriodInYearLbl,
+                        withPadding: false,
+                      ),
+                      NumberWidget(
+                        intValue: sipBrain.getInvestmentPeriodInYear(),
+                        withPadding: false,
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      LableWidget(
+                        label: kInvestmentPeriodInMonthLbl,
+                        withPadding: false,
+                      ),
+                      NumberWidget(
+                        intValue: sipBrain.getInvestmentPeriodInMonth(),
+                        withPadding: false,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+
+          //Investment Amount
+          Expanded(
+            child: ContainerWidget(
               children: [
-                //Monthly Investment Amount
-                ContainerWidget(
-                  children: [
-                    CurrencyFormatWidget(
-                      withPadding: false,
-                      lable: kInvestmentAmountLbl,
-                      amountInInt: sipBrain.getMonthlyInvestmentAmt(),
-                    ),
-                  ],
-                ),
-                //Annual Expected Returns
-                ContainerWidget(
-                  children: [
-                    LableWidget(
-                      label: kExpectedReturnsLbl,
-                      withPadding: false,
-                    ),
-                    NumberWidget(
-                      doubleValue: sipBrain.getExpectedReturns(),
-                      withPadding: false,
-                    ),
-                  ],
-                ),
-
-                //Invested Years and Months
-                ContainerWidget(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Column(
-                          children: [
-                            LableWidget(
-                              label: kInvestmentPeriodInYearLbl,
-                              withPadding: false,
-                            ),
-                            NumberWidget(
-                              intValue: sipBrain.getInvestmentPeriodInYear(),
-                              withPadding: false,
-                            ),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            LableWidget(
-                              label: kInvestmentPeriodInMonthLbl,
-                              withPadding: false,
-                            ),
-                            NumberWidget(
-                              intValue: sipBrain.getInvestmentPeriodInMonth(),
-                              withPadding: false,
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-
-                //Investment Amount
-                ContainerWidget(
-                  children: [
-                    CurrencyFormatWidget(
-                      withPadding: false,
-                      lable: 'Investment Amount',
-                      amountInInt: sipBrain.getInvestedAmount(sipBrain),
-                    ),
-                  ],
-                ),
-                //Wealth Created
-                ContainerWidget(
-                  children: [
-                    CurrencyFormatWidget(
-                      withPadding: false,
-                      lable: 'Wealth Created',
-                      amountInInt: sipBrain.getSipResult(sipBrain),
-                    ),
-                  ],
+                CurrencyFormatWidget(
+                  withPadding: false,
+                  lable: 'Investment Amount',
+                  amountInInt: sipBrain.getInvestedAmount(sipBrain),
                 ),
               ],
             ),
-            BottomButton(
-              buttonLabel: 'RE-CALCULATE',
-              onTap: () {
-                Navigator.pop(context);
-              },
+          ),
+          //Wealth Created
+          Expanded(
+            child: ContainerWidget(
+              children: [
+                CurrencyFormatWidget(
+                  withPadding: false,
+                  lable: 'Wealth Created',
+                  amountInInt: sipBrain.getSipResult(sipBrain),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+          BottomButton(
+            buttonLabel: 'RE-CALCULATE',
+            onTap: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
       ),
     );
   }

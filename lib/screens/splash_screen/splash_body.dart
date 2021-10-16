@@ -27,10 +27,10 @@ class _SplashBodyWidgetState extends State<SplashBodyWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        ///Investment Amount
+        //Monthly Investment Amount
         Expanded(
           child: ContainerWidget(
             children: [
@@ -41,7 +41,7 @@ class _SplashBodyWidgetState extends State<SplashBodyWidget> {
               SliderThemeWidget(
                 child: Slider(
                   min: 1000,
-                  max: 100000,
+                  max: 999999,
                   value: sipBrainObj.getMonthlyInvestmentAmt().toDouble(),
                   onChanged: (double value) {
                     setState(() {
@@ -77,45 +77,44 @@ class _SplashBodyWidgetState extends State<SplashBodyWidget> {
         ),
 
         ///Investment Monthly or yearly .
-        Expanded(
-          child: Row(
-            children: [
-              Expanded(
-                child: MonthYearWidget(
-                  month: sipBrainObj.getInvestmentPeriodInMonth(),
-                  label: kInvestmentPeriodInMonthLbl,
-                  withPadding: false,
-                  onPressAdd: () {
-                    setState(() {
-                      sipBrainObj.addInvestmentPeriodInMonth();
-                    });
-                  },
-                  onPressRemove: () {
-                    setState(() {
-                      sipBrainObj.removeInvestmentPeriodInMonth();
-                    });
-                  },
-                ),
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Flexible(
+              child: MonthYearWidget(
+                month: sipBrainObj.getInvestmentPeriodInMonth(),
+                label: kInvestmentPeriodInMonthLbl,
+                withPadding: false,
+                onPressAdd: () {
+                  setState(() {
+                    sipBrainObj.addInvestmentPeriodInMonth();
+                  });
+                },
+                onPressRemove: () {
+                  setState(() {
+                    sipBrainObj.removeInvestmentPeriodInMonth();
+                  });
+                },
               ),
-              Expanded(
-                child: MonthYearWidget(
-                  month: sipBrainObj.getInvestmentPeriodInYear(),
-                  label: kInvestmentPeriodInYearLbl,
-                  withPadding: false,
-                  onPressAdd: () {
-                    setState(() {
-                      sipBrainObj.addInvestmentPeriodInYear();
-                    });
-                  },
-                  onPressRemove: () {
-                    setState(() {
-                      sipBrainObj.removeInvestmentPeriodInYear();
-                    });
-                  },
-                ),
+            ),
+            Flexible(
+              child: MonthYearWidget(
+                month: sipBrainObj.getInvestmentPeriodInYear(),
+                label: kInvestmentPeriodInYearLbl,
+                withPadding: false,
+                onPressAdd: () {
+                  setState(() {
+                    sipBrainObj.addInvestmentPeriodInYear();
+                  });
+                },
+                onPressRemove: () {
+                  setState(() {
+                    sipBrainObj.removeInvestmentPeriodInYear();
+                  });
+                },
               ),
-            ],
-          ),
+            ),
+          ],
         ),
 
         ///Bottom Button

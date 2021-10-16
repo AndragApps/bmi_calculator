@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: kDebugShowCheckedModeBanner,
       title: kTitle,
       home: SplashScreen(),
+      
     );
   }
 }

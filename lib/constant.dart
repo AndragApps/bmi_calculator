@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 const bool kDebugShowCheckedModeBanner = false;
 const kTitle = "SIP Calculator";
 const kInvestmentAmountLbl = "Monthly Investment Amount";
-const int kInvestmentAmount = 25000;
+const int kInvestmentAmount = 1000;
 const kInvestmentPeriodInMonthLbl = "Months";
 const int kInvestmentPeriodMonth = 0;
 const kInvestmentPeriodInYearLbl = "Years";

@@ -13,7 +13,14 @@ class ScaffoldWidget extends StatelessWidget {
     return Scaffold(
       backgroundColor: kPrimaryDarkColor,
       body: SafeArea(
-        child: child,
+        child: CustomScrollView(
+          slivers: [
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: child,
+            ),
+          ],
+        ),
       ),
     );
   }

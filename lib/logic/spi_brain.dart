@@ -1,5 +1,5 @@
-import '../../constant.dart';
 import 'dart:math';
+import '../constant.dart';
 
 class SipBrain {
   late int _monthlyInvestmentAmt;

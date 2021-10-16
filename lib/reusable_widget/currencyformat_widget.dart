@@ -27,15 +27,15 @@ class CurrencyFormatWidget extends StatelessWidget {
       padding: withPadding == true
           ? const EdgeInsets.only(left: 25.0)
           : const EdgeInsets.all(0),
-      child: Expanded(
-        child: Column(
-          crossAxisAlignment: crossAxisAlignment,
-          children: [
-            LableWidget(
-              label: lable,
-              withPadding: false,
-            ),
-            Text(
+      child: Column(
+        crossAxisAlignment: crossAxisAlignment,
+        children: [
+          LableWidget(
+            label: lable,
+            withPadding: false,
+          ),
+          FittedBox(
+            child: Text(
               NumberFormat.currency(
                 locale: locale,
                 decimalDigits: decimalDigits,
@@ -44,8 +44,8 @@ class CurrencyFormatWidget extends StatelessWidget {
               ),
               style: kNumberStyle,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
