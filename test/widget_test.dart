@@ -8,12 +8,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+<<<<<<< HEAD
 import 'package:sipcalc/main.dart';
+=======
+import 'package:bmi_calculator/main.dart';
+>>>>>>> 8bfaea9198124973b737d80a0840761e696be206
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
+<<<<<<< HEAD
     await tester.pumpWidget(const MyApp());
+=======
+    await tester.pumpWidget(MyApp());
+>>>>>>> 8bfaea9198124973b737d80a0840761e696be206
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
